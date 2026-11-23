@@ -1,0 +1,932 @@
+
+/* ==========================================
+   1. GOOGLE FONTS
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+
+/* ==========================================
+   2. CSS VARIABLES
+========================================== */
+
+:root {
+    --primary: #8b5cf6;
+    --primary-dark: #7c3aed;
+    --primary-light: #ede9fe;
+
+    --text: #222222;
+    --text-light: #666666;
+
+    --background: #ffffff;
+    --background-light: #f8f7fc;
+
+    --border: #e5e5e5;
+    --white: #ffffff;
+
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+
+/* ==========================================
+   3. RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background-color: var(--background);
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* ==========================================
+   4. HEADER & NAVBAR
+========================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.nav {
+    min-height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--primary);
+
+    font-family: 'Playfair Display', serif;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-links a {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+
+/* ==========================================
+   5. BUTTONS
+========================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 13px 26px;
+
+    background-color: var(--primary);
+    color: var(--white);
+
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.2);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+
+/* ==========================================
+   6. HERO SECTION
+========================================== */
+
+.hero {
+    padding: 100px 0;
+    background-color: var(--background-light);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 80px;
+}
+
+.hero-content {
+    animation: fadeInUp 0.8s ease;
+}
+
+.hero-intro {
+    color: var(--primary);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.15;
+
+    margin-bottom: 15px;
+
+    letter-spacing: -1px;
+}
+
+.hero h2 {
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 500;
+
+    color: var(--primary);
+
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    max-width: 550px;
+
+    color: var(--text-light);
+
+    font-size: 17px;
+    line-height: 1.9;
+
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+
+/* Hero Image Placeholder */
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: fadeIn 1s ease;
+}
+
+.image-placeholder {
+    width: 350px;
+    height: 420px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.image-placeholder img {
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+
+/* ==========================================
+   7. SECTION COMMON STYLES
+========================================== */
+
+section {
+    padding: 90px 0;
+}
+
+.section-label {
+    color: var(--primary);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+
+    margin: 0 auto 50px;
+}
+
+.section-heading h2,
+.about h2,
+.contact h2 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(32px, 4vw, 46px);
+    line-height: 1.3;
+
+    margin-bottom: 18px;
+}
+
+.section-heading > p:last-child {
+    color: var(--text-light);
+    font-size: 16px;
+}
+
+
+/* ==========================================
+   8. ABOUT SECTION
+========================================== */
+
+.about {
+    background-color: var(--white);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+    gap: 70px;
+}
+
+.about h2 {
+    max-width: 500px;
+}
+
+.about-content p {
+    color: var(--text-light);
+
+    font-size: 17px;
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ==========================================
+   9. PROJECTS SECTION
+========================================== */
+
+.projects {
+    background-color: var(--background-light);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+}
+
+
+/* Project Card */
+
+.project-card {
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.10);
+}
+
+
+/* Project Screenshot */
+
+.project-image {
+    width: 100%;
+    height: 260px;
+
+    background-color: #ede9fe;
+
+    overflow: hidden;
+}
+
+.project-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: top center;
+
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.04);
+}
+
+
+/* Project Content */
+
+.project-content {
+    padding: 28px;
+}
+
+.project-type {
+    color: var(--primary);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 12px;
+}
+
+.project-content h3 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 27px;
+    line-height: 1.3;
+
+    margin-bottom: 15px;
+}
+
+.project-content > p:not(.project-type) {
+    color: var(--text-light);
+
+    font-size: 15px;
+    line-height: 1.8;
+
+    margin-bottom: 22px;
+}
+
+
+/* Technology Badges */
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-bottom: 25px;
+}
+
+.project-tech span {
+    padding: 7px 12px;
+
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* Project Buttons */
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 20px;
+
+    background-color: var(--primary);
+    color: var(--white);
+
+    border: 1px solid var(--primary);
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+
+    transform: translateY(-2px);
+}
+
+.project-links .project-link:last-child {
+    background-color: transparent;
+    color: var(--primary);
+}
+
+.project-links .project-link:last-child:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+
+/* ==========================================
+   10. SKILLS SECTION
+========================================== */
+
+.skills {
+    background-color: var(--white);
+}
+
+.skills-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skills-list span {
+    padding: 13px 25px;
+
+    background-color: var(--background-light);
+
+    color: var(--text);
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: all 0.3s ease;
+}
+
+.skills-list span:hover {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+
+    border-color: #c4b5fd;
+
+    transform: translateY(-3px);
+}
+
+
+/* ==========================================
+   11. CONTACT SECTION
+========================================== */
+
+.contact {
+    background-color: var(--background-light);
+}
+
+.contact-box {
+    max-width: 850px;
+
+    padding: 55px 40px;
+
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    box-shadow: var(--shadow);
+
+    text-align: center;
+}
+
+.contact-box h2 {
+    margin-bottom: 20px;
+}
+
+.contact-box > p:not(.section-label) {
+    max-width: 600px;
+
+    margin: 0 auto 30px;
+
+    color: var(--text-light);
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   12. FOOTER
+========================================== */
+
+footer {
+    padding: 25px 20px;
+
+    background-color: #222222;
+    color: var(--white);
+
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+    color: #d1d1d1;
+}
+
+
+/* ==========================================
+   13. ANIMATIONS
+========================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================================
+   14. TABLET RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .nav {
+        gap: 20px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .hero {
+        padding: 75px 0;
+    }
+
+    .hero-grid {
+        gap: 40px;
+    }
+
+    .image-placeholder {
+        width: 280px;
+        height: 340px;
+    }
+
+    .about-grid {
+        gap: 40px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        max-width: 650px;
+        margin: 0 auto;
+    }
+
+    .project-image {
+        height: 320px;
+    }
+
+}
+
+
+/* ==========================================
+   15. MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 600px) {
+
+    /* Navbar */
+
+    .nav {
+        flex-direction: column;
+
+        justify-content: center;
+
+        padding: 18px 0;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav-links {
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 12px 20px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        gap: 40px;
+    }
+
+    .hero-content {
+        order: 1;
+    }
+
+    .hero-image {
+        order: 2;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero h2 {
+        font-size: 23px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .image-placeholder {
+        width: 260px;
+        height: 300px;
+    }
+
+
+    /* Sections */
+
+    section {
+        padding: 65px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .section-heading h2,
+    .about h2,
+    .contact h2 {
+        font-size: 34px;
+    }
+
+
+    /* About */
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .about-content p {
+        font-size: 16px;
+    }
+
+
+    /* Projects */
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .project-image {
+        height: 220px;
+    }
+
+    .project-content {
+        padding: 22px;
+    }
+
+    .project-content h3 {
+        font-size: 24px;
+    }
+
+    .project-content > p:not(.project-type) {
+        font-size: 14px;
+    }
+
+    .project-links {
+        flex-direction: column;
+    }
+
+    .project-link {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    /* Skills */
+
+    .skills-list {
+        gap: 10px;
+    }
+
+    .skills-list span {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+
+    /* Contact */
+
+    .contact-box {
+        padding: 35px 22px;
+    }
+
+    .contact-box > p:not(.section-label) {
+        font-size: 15px;
+    }
+
+
+    /* Footer */
+
+    footer p {
+        font-size: 13px;
+    }
+
+}
+
+
+/* ==========================================
+   16. SMALL MOBILE
+========================================== */
+
+@media (max-width: 380px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .nav-links {
+        gap: 10px 14px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .image-placeholder {
+        width: 230px;
+        height: 270px;
+    }
+
+    .section-heading h2,
+    .about h2,
+    .contact h2 {
+        font-size: 30px;
+    }
+
+    .project-content {
+        padding: 18px;
+    }
+
+}
+
+
+/* ==========================================
+   17. ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+}
